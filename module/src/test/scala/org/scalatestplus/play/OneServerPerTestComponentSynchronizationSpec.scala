@@ -15,9 +15,10 @@
  */
 package org.scalatestplus.play
 
-import java.util.concurrent.TimeoutException
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.must.Matchers
 
-import org.scalatest.{ FlatSpec, MustMatchers }
+import java.util.concurrent.TimeoutException
 import org.scalatestplus.play.components.OneServerPerTestWithComponents
 import play.api.mvc.Results
 import play.api.routing.Router
@@ -27,7 +28,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 import scala.concurrent.{ Await, Future }
 
-class OneServerPerTestComponentSynchronizationSpec extends FlatSpec with MustMatchers
+class OneServerPerTestComponentSynchronizationSpec extends AnyFlatSpec with Matchers
   with OneServerPerTestWithComponents {
 
   override def components: BuiltInComponents = new BuiltInComponentsFromContext(context) with NoHttpFiltersComponents {

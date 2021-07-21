@@ -17,13 +17,15 @@ package org.scalatestplus.play
 
 import play.api.test._
 import org.scalatest._
-import selenium.WebBrowser
+import org.scalatest.matchers.must._
+import org.scalatest.wordspec._
+import org.scalatestplus.selenium.WebBrowser
 import concurrent.Eventually
 import concurrent.IntegrationPatience
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.firefox.FirefoxProfile
-import play.api.http.{ HttpProtocol, Status, HeaderNames }
+import play.api.http.{ HeaderNames, HttpProtocol, Status }
 
 /**
  * Convenience "super Suite" class for "mixed fixture" Play tests.
@@ -32,5 +34,5 @@ import play.api.http.{ HttpProtocol, Status, HeaderNames }
  * when different tests in the same test class need different kinds of fixtures. When different tests in the same class
  * need the same fixture, you're probably better of extending [[org.scalatestplus.play.PlaySpec PlaySpec]] instead.
  */
-abstract class MixedPlaySpec extends fixture.WordSpec with MustMatchers with OptionValues with MixedFixtures with Eventually with IntegrationPatience with WsScalaTestClient
+abstract class MixedPlaySpec extends FixtureAnyWordSpec with Matchers with OptionValues with MixedFixtures with Eventually with IntegrationPatience with WsScalaTestClient
 

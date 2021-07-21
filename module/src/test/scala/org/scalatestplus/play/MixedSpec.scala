@@ -16,15 +16,17 @@
 package org.scalatestplus.play
 
 import org.scalatest._
+import org.scalatest.matchers.must._
 import concurrent.Eventually
 import concurrent.IntegrationPatience
+import org.scalatest.wordspec.FixtureAnyWordSpec
 
 /**
  * Play-Test super-suite for test classes that need different kinds of fixtures (App, Server,
  * Browser) in different tests.
  */
-abstract class MixedSpec extends fixture.WordSpec
-  with MustMatchers
+abstract class MixedSpec extends FixtureAnyWordSpec
+  with Matchers
   with OptionValues
   with Inside
   with MixedFixtures

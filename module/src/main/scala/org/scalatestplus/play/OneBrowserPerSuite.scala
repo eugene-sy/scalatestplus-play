@@ -16,7 +16,7 @@
 package org.scalatestplus.play
 
 import org.scalatest._
-import selenium.WebBrowser
+import org.scalatestplus.selenium.WebBrowser
 import concurrent.Eventually
 import concurrent.IntegrationPatience
 import org.openqa.selenium.WebDriver

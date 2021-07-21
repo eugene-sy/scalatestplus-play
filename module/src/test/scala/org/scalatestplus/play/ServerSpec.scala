@@ -16,12 +16,14 @@
 package org.scalatestplus.play
 
 import org.scalatest._
+import org.scalatest.matchers.must._
+import org.scalatest.wordspec.AnyWordSpec
 import org.scalatestplus.play.guice.GuiceOneServerPerTest
 
 /*
  * Play-Test super-suite that provides a new fake Server for each test.
 */
-abstract class ServerSpec extends WordSpec with MustMatchers with OptionValues with Inside with GuiceOneServerPerTest {
+abstract class ServerSpec extends AnyWordSpec with Matchers with OptionValues with Inside with GuiceOneServerPerTest {
   this: TestSuite =>
 }
 

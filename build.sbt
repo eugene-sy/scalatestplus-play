@@ -23,14 +23,15 @@ import interplay.ScalaVersions._
 resolvers ++= DefaultOptions.resolvers(snapshot = true)
 resolvers += Resolver.sonatypeRepo("snapshots")
 
-val PlayVersion = playVersion("2.7.3")
+val PlayVersion = playVersion("2.7.9")
 
 val SeleniumVersion = "3.141.59"
 val HtmlUnitVersion = "2.34.0"
 val PhantomJsDriverVersion = "1.4.4"
 val MockitoVersion = "2.18.3"
 val CssParserVersion = "1.2.0"
-val ScalatestVersion = "3.0.8"
+val ScalatestVersion = "3.2.9"
+val ScalatestplusSeleniumVersion = s"$ScalatestVersion.0"
 
 lazy val mimaSettings = Seq(
   mimaPreviousArtifacts := { 
@@ -69,6 +70,7 @@ lazy val `scalatestplus-play` = project
     organization := "org.scalatestplus.play",
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % ScalatestVersion,
+      "org.scalatestplus" %% "selenium-3-141" % ScalatestplusSeleniumVersion,
       "org.seleniumhq.selenium" % "selenium-java" % SeleniumVersion exclude(org = "com.codeborne", name = "phantomjsdriver"),
       "org.seleniumhq.selenium" % "htmlunit-driver" % HtmlUnitVersion,
       "net.sourceforge.htmlunit" % "htmlunit-cssparser" % CssParserVersion,

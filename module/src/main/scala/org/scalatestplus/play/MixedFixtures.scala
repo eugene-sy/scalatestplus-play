@@ -18,7 +18,7 @@ package org.scalatestplus.play
 import org.openqa.selenium.WebDriver
 import org.scalatest._
 import org.scalatest.fixture._
-import org.scalatest.selenium.WebBrowser
+import org.scalatestplus.selenium._
 import org.scalatestplus.play.BrowserFactory.UnavailableDriver
 import play.api.Application
 import play.api.inject.guice.GuiceApplicationBuilder
@@ -230,7 +230,7 @@ import play.api.test._
  * }
  * </pre>
  */
-trait MixedFixtures extends TestSuiteMixin with fixture.UnitFixture { this: fixture.TestSuite =>
+trait MixedFixtures extends TestSuiteMixin with fixture.UnitFixture { this: FixtureTestSuite =>
 
   /**
    * `NoArg` subclass that provides an `Application` fixture.

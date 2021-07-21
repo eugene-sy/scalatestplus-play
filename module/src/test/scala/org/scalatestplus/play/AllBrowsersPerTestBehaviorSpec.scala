@@ -21,9 +21,10 @@ import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.ie.InternetExplorerDriver
 import org.openqa.selenium.safari.SafariDriver
 import org.openqa.selenium.htmlunit.HtmlUnitDriver
+import org.scalatest.wordspec.AnyWordSpec
 import org.scalatestplus.play.guice.GuiceOneServerPerTest
 
-class AllBrowsersPerTestBehaviorSpec extends WordSpec {
+class AllBrowsersPerTestBehaviorSpec extends AnyWordSpec {
 
   object ChosenTest extends Tag("ChosenTest")
 
